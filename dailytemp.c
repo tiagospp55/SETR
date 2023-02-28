@@ -21,3 +21,9 @@ int dtStat(int vector, int * max, int * min, int * avg){
 
     return 0;
 }
+int dtAdd(int vector){
+    for(int i=0,i<sizeof(vector)sizeof(int);i++){
+        scanf("%d",&vector[i])
+    }
+    return vector;
+}
