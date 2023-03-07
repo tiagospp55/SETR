@@ -24,4 +24,17 @@ int MyFIFOInsert(int value,struct MyFifo FIFO){
 
     return 0;
     }
+void MyFIFORemove(struct MyFifo FIFO){
+    for(int i = 0; i < FIFO.head; i++){
+        FIFO.fifo[i] = FIFO.fifo[i+1];
+    }
+    FIFO.head--;
+}
 
+int MyFIFOPeep(struct MyFifo FIFO){
+    return FIFO.fifo[FIFO.head];
+}
+
+int MyFIFOSize(struct MyFifo FIFO){
+    return FIFO.tail;
+}
