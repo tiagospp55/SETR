@@ -38,11 +38,11 @@ void MyFIFORemove(struct MyFifo FIFO){
 		return empty_fifo; 
 	}else{
 
-        FIFO.Last_pointer--;
+        FIFO.Last_Pointer--;
     }}
 
 int MyFIFOPeep(struct MyFifo FIFO){
-    return FIFO.fifo[FIFO.Last_pointer];
+    return FIFO.fifo[FIFO.Last_Pointer];
 }
 
 int MyFIFOSize(struct MyFifo FIFO){
