@@ -5,13 +5,13 @@
 struct MyFifo
 {
     int fifo[INT_MAX];
-    int tail = 0; // Tamanho da Fifo
-    int head = 0; // Pointer para a última posição utilizada
+    int First_Pointer = 0; // Tamanho da Fifo
+    int Last_Pointer  = 0; // Pointer para a última posição utilizada
 };
 
 void MyFIFOInit(int size,struct MyFifo FIFO);
 
-void MyFIFOInsert(int value,struct MyFifo FIFO);
+int MyFIFOInsert(int value,struct MyFifo FIFO);
 
 void MyFIFORemove(struct MyFifo FIFO);
 

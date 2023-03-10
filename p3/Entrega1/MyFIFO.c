@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>  
 #include <limits.h>
 #include "MyFifo.h"
 
@@ -9,32 +9,42 @@ void MyFIFOInit(int size,struct MyFifo FIFO){
     for(int i=0; i<size; i++){
         FIFO.fifo[i] = 0;
     }
-    FIFO.head = 0;
-    FIFO.tail = 0;
+    FIFO.Last_Pointer = 0;  // último a ser colocado 
+    FIFO.First_Pointer = 0; // Primeiro a ser colocado 
 }
 
 int MyFIFOInsert(int value,struct MyFifo FIFO){
     // Add a value to the FIFO
-    FIFO.fifo[FIFO.head] = value;
-    if(FIFO.head == FIFO.tail){
+    if(FIFO.Last_Pointer == INT_MAX && FIFO.First_Pointer == 0){
         return full_fifo;
     }
-
-    FIFO.head++;
+    else if (FIFO.Last_Pointer == INT_MAX && FIFO.First_Pointer != 0)
+    {
+        FIFO.First_Pointer = 0;
+        FIFO.fifo[FIFO.Last_Pointer] = value;
+        FIFO.Last_Pointer++;
+    }
+    else{
+        FIFO.fifo[FIFO.Last_Pointer] = value;
+        FIFO.Last_Pointer++;
+    }
 
     return 0;
     }
+    
 void MyFIFORemove(struct MyFifo FIFO){
-    for(int i = 0; i < FIFO.head; i++){
-        FIFO.fifo[i] = FIFO.fifo[i+1];
-    }
-    FIFO.head--;
-}
+
+	if(FIFO.Last_Pointer == 0){
+		return empty_fifo; 
+	}else{
+
+        FIFO.Last_pointer--;
+    }}
 
 int MyFIFOPeep(struct MyFifo FIFO){
-    return FIFO.fifo[FIFO.head];
+    return FIFO.fifo[FIFO.Last_pointer];
 }
 
 int MyFIFOSize(struct MyFifo FIFO){
-    return FIFO.tail;
+    return FIFO.First_Pointer;
 }
