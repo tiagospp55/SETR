@@ -37,7 +37,6 @@ void MyFIFORemove(struct MyFifo FIFO){
 	if(FIFO.Last_Pointer == 0){
 		return empty_fifo; 
 	}else{
-
         FIFO.Last_Pointer--;
     }}
 
