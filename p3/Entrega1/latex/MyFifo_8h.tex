@@ -1,0 +1,81 @@
+\hypertarget{MyFifo_8h}{}\section{My\+Fifo.\+h File Reference}
+\label{MyFifo_8h}\index{My\+Fifo.\+h@{My\+Fifo.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+Include dependency graph for My\+Fifo.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMyFifo}{My\+Fifo}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{MyFifo_8h_a1ab87830e64bbc20b698b940aca6cdf8}{full\+\_\+fifo}~1
+\item 
+\#define \hyperlink{MyFifo_8h_a4dc03e9706e7619d11551929a8def787}{empty\+\_\+fifo}~2
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{MyFifo_8h_af26149eb6afc6765d62371dba46d9b1c}{My\+F\+I\+F\+O\+Init} (int size, struct \hyperlink{structMyFifo}{My\+Fifo} F\+I\+FO)
+\item 
+int \hyperlink{MyFifo_8h_a061df6bcfbf543131a7192967be19f1d}{My\+F\+I\+F\+O\+Insert} (int value, struct \hyperlink{structMyFifo}{My\+Fifo} F\+I\+FO)
+\item 
+void \hyperlink{MyFifo_8h_a1d7c37cf5db78c84c0f979405cdf7660}{My\+F\+I\+F\+O\+Remove} (struct \hyperlink{structMyFifo}{My\+Fifo} F\+I\+FO)
+\item 
+int \hyperlink{MyFifo_8h_aec8bdac383a3d8acee6fe0d5e3fbda09}{My\+F\+I\+F\+O\+Peep} (struct \hyperlink{structMyFifo}{My\+Fifo} F\+I\+FO)
+\item 
+int \hyperlink{MyFifo_8h_aad5c4e278bd3e83902a8362bd2fd34ba}{My\+F\+I\+F\+O\+Size} (struct \hyperlink{structMyFifo}{My\+Fifo} F\+I\+FO)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{MyFifo_8h_a4dc03e9706e7619d11551929a8def787}\label{MyFifo_8h_a4dc03e9706e7619d11551929a8def787}} 
+\index{My\+Fifo.\+h@{My\+Fifo.\+h}!empty\+\_\+fifo@{empty\+\_\+fifo}}
+\index{empty\+\_\+fifo@{empty\+\_\+fifo}!My\+Fifo.\+h@{My\+Fifo.\+h}}
+\subsubsection{\texorpdfstring{empty\+\_\+fifo}{empty\_fifo}}
+{\footnotesize\ttfamily \#define empty\+\_\+fifo~2}
+
+\mbox{\Hypertarget{MyFifo_8h_a1ab87830e64bbc20b698b940aca6cdf8}\label{MyFifo_8h_a1ab87830e64bbc20b698b940aca6cdf8}} 
+\index{My\+Fifo.\+h@{My\+Fifo.\+h}!full\+\_\+fifo@{full\+\_\+fifo}}
+\index{full\+\_\+fifo@{full\+\_\+fifo}!My\+Fifo.\+h@{My\+Fifo.\+h}}
+\subsubsection{\texorpdfstring{full\+\_\+fifo}{full\_fifo}}
+{\footnotesize\ttfamily \#define full\+\_\+fifo~1}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{MyFifo_8h_af26149eb6afc6765d62371dba46d9b1c}\label{MyFifo_8h_af26149eb6afc6765d62371dba46d9b1c}} 
+\index{My\+Fifo.\+h@{My\+Fifo.\+h}!My\+F\+I\+F\+O\+Init@{My\+F\+I\+F\+O\+Init}}
+\index{My\+F\+I\+F\+O\+Init@{My\+F\+I\+F\+O\+Init}!My\+Fifo.\+h@{My\+Fifo.\+h}}
+\subsubsection{\texorpdfstring{My\+F\+I\+F\+O\+Init()}{MyFIFOInit()}}
+{\footnotesize\ttfamily void My\+F\+I\+F\+O\+Init (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{struct \hyperlink{structMyFifo}{My\+Fifo}}]{F\+I\+FO }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MyFifo_8h_a061df6bcfbf543131a7192967be19f1d}\label{MyFifo_8h_a061df6bcfbf543131a7192967be19f1d}} 
+\index{My\+Fifo.\+h@{My\+Fifo.\+h}!My\+F\+I\+F\+O\+Insert@{My\+F\+I\+F\+O\+Insert}}
+\index{My\+F\+I\+F\+O\+Insert@{My\+F\+I\+F\+O\+Insert}!My\+Fifo.\+h@{My\+Fifo.\+h}}
+\subsubsection{\texorpdfstring{My\+F\+I\+F\+O\+Insert()}{MyFIFOInsert()}}
+{\footnotesize\ttfamily int My\+F\+I\+F\+O\+Insert (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{struct \hyperlink{structMyFifo}{My\+Fifo}}]{F\+I\+FO }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MyFifo_8h_aec8bdac383a3d8acee6fe0d5e3fbda09}\label{MyFifo_8h_aec8bdac383a3d8acee6fe0d5e3fbda09}} 
+\index{My\+Fifo.\+h@{My\+Fifo.\+h}!My\+F\+I\+F\+O\+Peep@{My\+F\+I\+F\+O\+Peep}}
+\index{My\+F\+I\+F\+O\+Peep@{My\+F\+I\+F\+O\+Peep}!My\+Fifo.\+h@{My\+Fifo.\+h}}
+\subsubsection{\texorpdfstring{My\+F\+I\+F\+O\+Peep()}{MyFIFOPeep()}}
+{\footnotesize\ttfamily int My\+F\+I\+F\+O\+Peep (\begin{DoxyParamCaption}\item[{struct \hyperlink{structMyFifo}{My\+Fifo}}]{F\+I\+FO }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MyFifo_8h_a1d7c37cf5db78c84c0f979405cdf7660}\label{MyFifo_8h_a1d7c37cf5db78c84c0f979405cdf7660}} 
+\index{My\+Fifo.\+h@{My\+Fifo.\+h}!My\+F\+I\+F\+O\+Remove@{My\+F\+I\+F\+O\+Remove}}
+\index{My\+F\+I\+F\+O\+Remove@{My\+F\+I\+F\+O\+Remove}!My\+Fifo.\+h@{My\+Fifo.\+h}}
+\subsubsection{\texorpdfstring{My\+F\+I\+F\+O\+Remove()}{MyFIFORemove()}}
+{\footnotesize\ttfamily void My\+F\+I\+F\+O\+Remove (\begin{DoxyParamCaption}\item[{struct \hyperlink{structMyFifo}{My\+Fifo}}]{F\+I\+FO }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{MyFifo_8h_aad5c4e278bd3e83902a8362bd2fd34ba}\label{MyFifo_8h_aad5c4e278bd3e83902a8362bd2fd34ba}} 
+\index{My\+Fifo.\+h@{My\+Fifo.\+h}!My\+F\+I\+F\+O\+Size@{My\+F\+I\+F\+O\+Size}}
+\index{My\+F\+I\+F\+O\+Size@{My\+F\+I\+F\+O\+Size}!My\+Fifo.\+h@{My\+Fifo.\+h}}
+\subsubsection{\texorpdfstring{My\+F\+I\+F\+O\+Size()}{MyFIFOSize()}}
+{\footnotesize\ttfamily int My\+F\+I\+F\+O\+Size (\begin{DoxyParamCaption}\item[{struct \hyperlink{structMyFifo}{My\+Fifo}}]{F\+I\+FO }\end{DoxyParamCaption})}
+

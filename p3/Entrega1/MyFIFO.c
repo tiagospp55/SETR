@@ -1,49 +1,56 @@
-#include <stdio.h>  
-#include <limits.h>
-#include "MyFifo.h"
+#include <stdio.h>
+#include <stdlib.h>
 
+struct MyFIFO{
+    int *data;
+    int head;
+    int tail;
+    int cnt; 
+    int size;
+};
 
-
-void MyFIFOInit(int size,struct MyFifo FIFO){
-    // Initialize the FIFO
-    for(int i=0; i<size; i++){
-        FIFO.fifo[i] = 0;
+struct MyFIFO* MyFIFOInit(int size){   
+    struct MyFIFO *fifo = (struct MyFIFO*) malloc(sizeof(fifo));
+    fifo->data = (int*) malloc(size * sizeof(int));
+    fifo->head = 0;
+    fifo->tail = 0;
+    fifo->cnt = 0;
+    fifo->size = 0;
+    return fifo;
     }
-    FIFO.Last_Pointer = 0;  // último a ser colocado 
-    FIFO.First_Pointer = 0; // Primeiro a ser colocado 
+
+int MyFIFOInsert(struct *fifo,int value){
+    if(fifo->cnt == fifo->size) return fifo_Full; // Se tiver o máximo elementos do array circular
+    fifo->data[fifo->tail] = value;
+    if(fifo->tail == fifo->size) fifo->tail = 0;
+    fifo->count++;
+    return 0;
 }
 
-int MyFIFOInsert(int value,struct MyFifo FIFO){
-    // Add a value to the FIFO
-    if(FIFO.Last_Pointer == INT_MAX && FIFO.First_Pointer == 0){
-        return full_fifo;
-    }
-    else if (FIFO.Last_Pointer == INT_MAX && FIFO.First_Pointer != 0)
-    {
-        FIFO.First_Pointer = 0;
-        FIFO.fifo[FIFO.Last_Pointer] = value;
-        FIFO.Last_Pointer++;
-    }
+int MyFIFORemove(struct *fifo){
+    if(fifo->cnt = 0) return fifo_Empty
+    if(fifo->head == fifo->size){
+        fifo->head = 0;
+    } 
     else{
-        FIFO.fifo[FIFO.Last_Pointer] = value;
-        FIFO.Last_Pointer++;
+        fifo->head++:
     }
 
     return 0;
-    }
-    
-void MyFIFORemove(struct MyFifo FIFO){
 
-	if(FIFO.Last_Pointer == 0){
-		return empty_fifo; 
-	}else{
-        FIFO.Last_Pointer--;
-    }}
-
-int MyFIFOPeep(struct MyFifo FIFO){
-    return FIFO.fifo[FIFO.Last_Pointer];
 }
 
-int MyFIFOSize(struct MyFifo FIFO){
-    return FIFO.First_Pointer;
+int MyFIFOPeep(struct MyFIFO *fifo){
+    return fifo->data[fifo->head];
 }
+
+int MyFIFOSize(struct MyFIFO *fifo){
+    return fifo->size;
+}
+
+void MyFIFODestroy(struct FIFO *fifo){
+    free(fifo->data);
+    free(fifo);
+}
+
+
