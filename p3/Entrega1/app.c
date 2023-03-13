@@ -1,3 +1,11 @@
+/**   \file app.c
+ *    \brief test application
+ *
+ *    test application to convice the observer that the FIFO works 
+ *    \author Vitor Silva,Tiago Pereira
+ *    \date 13 March 2023
+ *    \bug No known bugs.
+ */
 #include <stdio.h>
 #include "MyFifo.h"
 

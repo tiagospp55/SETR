@@ -61,65 +61,91 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">MyFIFO.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;limits.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="MyFifo_8h_source.html">MyFifo.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for MyFIFO.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="MyFIFO_8c__incl.png" border="0" usemap="#MyFIFO_8c" alt=""/></div>
-<!-- MAP 0 -->
+<map name="MyFIFO_8c" id="MyFIFO_8c">
+</map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMyFIFO.html">MyFIFO</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af26149eb6afc6765d62371dba46d9b1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#af26149eb6afc6765d62371dba46d9b1c">MyFIFOInit</a> (int size, struct <a class="el" href="structMyFifo.html">MyFifo</a> FIFO)</td></tr>
-<tr class="separator:af26149eb6afc6765d62371dba46d9b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a061df6bcfbf543131a7192967be19f1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a061df6bcfbf543131a7192967be19f1d">MyFIFOInsert</a> (int value, struct <a class="el" href="structMyFifo.html">MyFifo</a> FIFO)</td></tr>
-<tr class="separator:a061df6bcfbf543131a7192967be19f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d7c37cf5db78c84c0f979405cdf7660"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a1d7c37cf5db78c84c0f979405cdf7660">MyFIFORemove</a> (struct <a class="el" href="structMyFifo.html">MyFifo</a> FIFO)</td></tr>
-<tr class="separator:a1d7c37cf5db78c84c0f979405cdf7660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec8bdac383a3d8acee6fe0d5e3fbda09"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#aec8bdac383a3d8acee6fe0d5e3fbda09">MyFIFOPeep</a> (struct <a class="el" href="structMyFifo.html">MyFifo</a> FIFO)</td></tr>
-<tr class="separator:aec8bdac383a3d8acee6fe0d5e3fbda09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad5c4e278bd3e83902a8362bd2fd34ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#aad5c4e278bd3e83902a8362bd2fd34ba">MyFIFOSize</a> (struct <a class="el" href="structMyFifo.html">MyFifo</a> FIFO)</td></tr>
-<tr class="separator:aad5c4e278bd3e83902a8362bd2fd34ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1697e0e027813a3284a0d668e1468328"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structMyFIFO.html">MyFIFO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a1697e0e027813a3284a0d668e1468328">MyFIFOInit</a> (int size)</td></tr>
+<tr class="memdesc:a1697e0e027813a3284a0d668e1468328"><td class="mdescLeft">&#160;</td><td class="mdescRight">init the module  <a href="#a1697e0e027813a3284a0d668e1468328">More...</a><br /></td></tr>
+<tr class="separator:a1697e0e027813a3284a0d668e1468328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0850153ba888a0d8677533b0059b6684"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a0850153ba888a0d8677533b0059b6684">MyFIFOInsert</a> (struct *fifo, int value)</td></tr>
+<tr class="memdesc:a0850153ba888a0d8677533b0059b6684"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds an element to the FIFO  <a href="#a0850153ba888a0d8677533b0059b6684">More...</a><br /></td></tr>
+<tr class="separator:a0850153ba888a0d8677533b0059b6684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd821b21a5354925ca3553379277b0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a6cd821b21a5354925ca3553379277b0e">MyFIFORemove</a> (struct *fifo)</td></tr>
+<tr class="memdesc:a6cd821b21a5354925ca3553379277b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an element from the FIFO.  <a href="#a6cd821b21a5354925ca3553379277b0e">More...</a><br /></td></tr>
+<tr class="separator:a6cd821b21a5354925ca3553379277b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5fb3eda1acf8047ba7c6a940c5d822"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a7b5fb3eda1acf8047ba7c6a940c5d822">MyFIFOPeep</a> (struct <a class="el" href="structMyFIFO.html">MyFIFO</a> *fifo)</td></tr>
+<tr class="memdesc:a7b5fb3eda1acf8047ba7c6a940c5d822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the oldest element on the FIFO,but does not remove.  <a href="#a7b5fb3eda1acf8047ba7c6a940c5d822">More...</a><br /></td></tr>
+<tr class="separator:a7b5fb3eda1acf8047ba7c6a940c5d822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a55e0ecfa98968dfa7a3e1cd01882d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a2a55e0ecfa98968dfa7a3e1cd01882d6">MyFIFOSize</a> (struct <a class="el" href="structMyFIFO.html">MyFIFO</a> *fifo)</td></tr>
+<tr class="memdesc:a2a55e0ecfa98968dfa7a3e1cd01882d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements of the FIFO.  <a href="#a2a55e0ecfa98968dfa7a3e1cd01882d6">More...</a><br /></td></tr>
+<tr class="separator:a2a55e0ecfa98968dfa7a3e1cd01882d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2903d0042b1f59da19dd1f529b7bea0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MyFIFO_8c.html#a2903d0042b1f59da19dd1f529b7bea0a">MyFIFODestroy</a> (struct FIFO *fifo)</td></tr>
+<tr class="memdesc:a2903d0042b1f59da19dd1f529b7bea0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the FIFO.  <a href="#a2903d0042b1f59da19dd1f529b7bea0a">More...</a><br /></td></tr>
+<tr class="separator:a2903d0042b1f59da19dd1f529b7bea0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af26149eb6afc6765d62371dba46d9b1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af26149eb6afc6765d62371dba46d9b1c">&#9670;&nbsp;</a></span>MyFIFOInit()</h2>
+<a id="a2903d0042b1f59da19dd1f529b7bea0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2903d0042b1f59da19dd1f529b7bea0a">&#9670;&nbsp;</a></span>MyFIFODestroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MyFIFOInit </td>
+          <td class="memname">void MyFIFODestroy </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">struct FIFO *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">struct <a class="el" href="structMyFifo.html">MyFifo</a>&#160;</td>
-          <td class="paramname"><em>FIFO</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Destroy the FIFO. </p>
+
 </div>
 </div>
-<a id="a061df6bcfbf543131a7192967be19f1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a061df6bcfbf543131a7192967be19f1d">&#9670;&nbsp;</a></span>MyFIFOInsert()</h2>
+<a id="a1697e0e027813a3284a0d668e1468328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1697e0e027813a3284a0d668e1468328">&#9670;&nbsp;</a></span>MyFIFOInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structMyFIFO.html">MyFIFO</a>* MyFIFOInit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>init the module </p>
+
+</div>
+</div>
+<a id="a0850153ba888a0d8677533b0059b6684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0850153ba888a0d8677533b0059b6684">&#9670;&nbsp;</a></span>MyFIFOInsert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,14 +153,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int MyFIFOInsert </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype">struct *&#160;</td>
+          <td class="paramname"><em>fifo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct <a class="el" href="structMyFifo.html">MyFifo</a>&#160;</td>
-          <td class="paramname"><em>FIFO</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -144,10 +170,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>adds an element to the FIFO </p>
+
 </div>
 </div>
-<a id="aec8bdac383a3d8acee6fe0d5e3fbda09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec8bdac383a3d8acee6fe0d5e3fbda09">&#9670;&nbsp;</a></span>MyFIFOPeep()</h2>
+<a id="a7b5fb3eda1acf8047ba7c6a940c5d822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b5fb3eda1acf8047ba7c6a940c5d822">&#9670;&nbsp;</a></span>MyFIFOPeep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,35 +183,39 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int MyFIFOPeep </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMyFifo.html">MyFifo</a>&#160;</td>
-          <td class="paramname"><em>FIFO</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structMyFIFO.html">MyFIFO</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Return the oldest element on the FIFO,but does not remove. </p>
+
 </div>
 </div>
-<a id="a1d7c37cf5db78c84c0f979405cdf7660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d7c37cf5db78c84c0f979405cdf7660">&#9670;&nbsp;</a></span>MyFIFORemove()</h2>
+<a id="a6cd821b21a5354925ca3553379277b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd821b21a5354925ca3553379277b0e">&#9670;&nbsp;</a></span>MyFIFORemove()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MyFIFORemove </td>
+          <td class="memname">int MyFIFORemove </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMyFifo.html">MyFifo</a>&#160;</td>
-          <td class="paramname"><em>FIFO</em></td><td>)</td>
+          <td class="paramtype">struct *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Removes an element from the FIFO. </p>
+
 </div>
 </div>
-<a id="aad5c4e278bd3e83902a8362bd2fd34ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad5c4e278bd3e83902a8362bd2fd34ba">&#9670;&nbsp;</a></span>MyFIFOSize()</h2>
+<a id="a2a55e0ecfa98968dfa7a3e1cd01882d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a55e0ecfa98968dfa7a3e1cd01882d6">&#9670;&nbsp;</a></span>MyFIFOSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,12 +223,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int MyFIFOSize </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structMyFifo.html">MyFifo</a>&#160;</td>
-          <td class="paramname"><em>FIFO</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structMyFIFO.html">MyFIFO</a> *&#160;</td>
+          <td class="paramname"><em>fifo</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the number of elements of the FIFO. </p>
 
 </div>
 </div>
