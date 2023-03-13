@@ -2,15 +2,8 @@
 #include "MyFifo.h"
 
 int main(void){
-    struct MyFifo FIFO;
-
-    MyFIFOInit(100,FIFO);
-
-    for(int i = 0; i < 5; i++){
-        int value = random();
-        MyFIFOInsert(value, FIFO);
-    }
-
+   
+   printf("Hello World");
     
 
 }
