@@ -9,6 +9,9 @@
 /**
  *
  * \brief init the module
+ * 
+ * \param[in] fifo struct fifo
+ * \param[in] size size of FIFO
 */
 void MyFIFOInit(struct MyFIFO *fifo,int size){   
     fifo->data = (int*) malloc(size * sizeof(int));
@@ -22,6 +25,10 @@ void MyFIFOInit(struct MyFIFO *fifo,int size){
 /**
  *
  * \brief adds an element to the FIFO
+ * 
+ * \param[in] fifo struct fifo
+ * \param[in] value element to add in the FIFO
+ * \param[out] return return 0 it the function do is job or return fifo_full if the FiFO is full 
 */
 int MyFIFOInsert(struct MyFIFO *fifo,int value){
     
@@ -41,6 +48,9 @@ int MyFIFOInsert(struct MyFIFO *fifo,int value){
 /**
  *
  * \brief Removes an element from the FIFO
+ * 
+ * \param[in] fifo struct fifo
+ * \param[out] return return 0 it the function do is job or return fifo_Empty if the FiFO is empty 
 */
 int MyFIFORemove(struct MyFIFO *fifo){
     printf("\nRemove %d", fifo->data[fifo->head]);
@@ -59,6 +69,10 @@ int MyFIFORemove(struct MyFIFO *fifo){
 /**
  *
  * \brief Return the oldest element on the FIFO,but does not remove
+ * 
+ * \param[in] fifo struct fifo
+ * \param[out] return return the oldest element
+ * 
 */
 
 
@@ -69,6 +83,10 @@ int MyFIFOPeep(struct MyFIFO *fifo){
 /**
  *
  * \brief Returns the number of elements of the FIFO
+ * 
+ * \param[in] fifo struct fifo
+ * \param[out] return return the number of elements of the FIFO
+ * 
 */
 int MyFIFOSize(struct MyFIFO *fifo){
     return fifo->cnt;
@@ -78,6 +96,8 @@ int MyFIFOSize(struct MyFIFO *fifo){
 /**
  *
  * \brief Destroy the FIFO
+ * 
+ * \param[in] fifo struct fifo
 */
 
 void MyFIFODestroy(struct MyFIFO *fifo){
@@ -86,7 +106,12 @@ void MyFIFODestroy(struct MyFIFO *fifo){
 }
 
 
-
+/**
+ * \brief write fifo elements in order 
+ * 
+ * \param[in] fifo struct fifo
+ * 
+*/
 void MyFIFOPrint(struct MyFIFO *fifo)
 {
     if((fifo->cnt - fifo->head) < fifo->size){

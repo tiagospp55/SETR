@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['last_5fpointer',['Last_Pointer',['../structMyFifo.html#a1d2edc0e076e119a693819a4a35ce46d',1,'MyFifo']]]
+  ['tail',['tail',['../structMyFIFO.html#a9d8f4b75a04e9764343dddebea70b26d',1,'MyFIFO']]]
 ];

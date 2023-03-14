@@ -5,4 +5,6 @@ digraph "MyFifo.h"
   Node3 [label="MyFifo.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="app.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$app_8c.html",tooltip="test application "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MyFIFO.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MyFIFO_8c.html"];
 }
