@@ -24,4 +24,4 @@ int MyFIFOSize(struct MyFIFO *fifo);
 
 void MyFIFODestroy(struct MyFIFO *fifo);
 
-
+void MyFIFOPrint(struct MyFIFO *fifo);

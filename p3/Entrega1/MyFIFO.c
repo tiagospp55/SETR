@@ -5,13 +5,7 @@
 
 
 
-struct MyFIFO{
-    int *data;
-    int head;
-    int tail;
-    int cnt; 
-    int size;
-};
+
 /**
  *
  * \brief init the module
@@ -30,16 +24,16 @@ void MyFIFOInit(struct MyFIFO *fifo,int size){
  * \brief adds an element to the FIFO
 */
 int MyFIFOInsert(struct MyFIFO *fifo,int value){
-     printf("insert\n");
+    
     if(fifo->cnt == fifo->size) {
-        return fifo_Full; // Se tiver o máximo elementos do array circular
-        printf("Não inserido (tamanho máximo atingido)");
+        printf("%d não foi inserido (tamanho máximo atingido)\n", value);
+        return fifo_Full; 
     }
     fifo->data[fifo->tail] = value;
     if(fifo->tail == fifo->size) fifo->tail = 0;
     fifo->tail++;
     fifo->cnt++;
-   
+    printf("Inserir %d\n", value);
     return 0;
 }
 
@@ -49,7 +43,7 @@ int MyFIFOInsert(struct MyFIFO *fifo,int value){
  * \brief Removes an element from the FIFO
 */
 int MyFIFORemove(struct MyFIFO *fifo){
-    printf("remove\n");
+    printf("\nRemove %d", fifo->data[fifo->head]);
     if(fifo->cnt == 0) return fifo_Empty;
     if(fifo->head == fifo->size){
         fifo->head = 0;
@@ -57,7 +51,6 @@ int MyFIFORemove(struct MyFIFO *fifo){
     else{
         fifo->head++;
         fifo->cnt--;
-        printf(" cnt depois remove %d\n", fifo->cnt);
     }
     
     return 0;
@@ -94,4 +87,24 @@ void MyFIFODestroy(struct MyFIFO *fifo){
 
 
 
+void MyFIFOPrint(struct MyFIFO *fifo)
+{
+    if((fifo->cnt - fifo->head) < fifo->size){
+        printf("eNTROU AQUI");
+        for(int i = fifo->head; i < (fifo->head + fifo->cnt); i++){
+            printf("%d ", fifo->data[i]);
+        }
+    }else{
+        printf("eNTROU AQUI ASDASDASD");
+        int res = 0;
+        for(int i = fifo->head; i < fifo->size; i++){
+            printf("%d ", fifo->data[i]);
+            res++;
+        }
+        for(int i = 0; i <= (fifo->cnt - res); i++){ 
+            printf("%d ", fifo->data[i]);
+        }
+    }
+
+}
 
