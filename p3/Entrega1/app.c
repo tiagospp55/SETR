@@ -1,10 +1,9 @@
 /**   \file app.c
- *    \brief test application
+ *    \brief Test application
  *
- *    test application to convice the observer that the FIFO works 
+ *    Test application to create FIFOs ,add and remove elements in  FIFO to see if works 
  *    \author Vitor Silva,Tiago Pereira
- *    \date 13 March 2023
- *    \bug No known bugs.
+ *    \date 14 March 2023
  */
 #include <stdio.h>
 #include "MyFifo.h"
