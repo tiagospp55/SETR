@@ -32,30 +32,30 @@ int main(void){
    case 1:{
       printf("Iremos testar para uma FIFO de 5 posições\n");
       MyFIFOInit(&fifo, 5);
-      for(int i = 0; i < 7; i++){
+      for(int i = 0; i <=6; i++){
          error[i] = MyFIFOInsert(&fifo, i);
       }
       printf("A sexta e sétima inserção não vão funcionar, retornando o valor de erro 2\nValores de retorno:\n");
-      for(int j = 0;  j < 7; j++){
+      for(int j = 0;  j <= 6; j++){
          printf("%d ",error[j]);
       }
       printf("\nFicamos assim com os valores na FIFO de: \n");
       MyFIFOPrint(&fifo);
-      printf("\nRemover 3 valores\n");
+      printf("Remover 3 valores\n");
       MyFIFORemove(&fifo);
       MyFIFORemove(&fifo);
       MyFIFORemove(&fifo);
       printf("A head passou agora para: %d\n", fifo.head);
-      printf("Temos assim %d valores dentro da FIFO\n", MyFIFOPeep(&fifo));
-   
+      printf("Ficamos assim com %d valores dentro da FIFO\n", MyFIFOSize(&fifo));
       MyFIFOPrint(&fifo);
       MyFIFOInsert(&fifo, 2);
       MyFIFOInsert(&fifo,5);
       MyFIFOPrint(&fifo);
+/*
       MyFIFORemove(&fifo);
       MyFIFORemove(&fifo);
       MyFIFOPrint(&fifo);
-      
+      */
       break;
    }
    case 2:{

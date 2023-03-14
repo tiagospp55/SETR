@@ -30,7 +30,12 @@ int MyFIFOInsert(struct MyFIFO *fifo,int value){
         return fifo_Full; 
     }
     fifo->data[fifo->tail] = value;
-    if(fifo->tail == fifo->size) fifo->tail = 0;
+    if(fifo->tail == fifo->size) {
+        fifo->tail = 0;
+        fifo->cnt++;
+        printf("Inserir %d\n", value);
+        return 0;
+    }
     fifo->tail++;
     fifo->cnt++;
     printf("Inserir %d\n", value);
@@ -43,7 +48,7 @@ int MyFIFOInsert(struct MyFIFO *fifo,int value){
  * \brief Removes an element from the FIFO
 */
 int MyFIFORemove(struct MyFIFO *fifo){
-    printf("\nRemove %d", fifo->data[fifo->head]);
+    printf("Remove %d\n", fifo->data[fifo->head]);
     if(fifo->cnt == 0) return fifo_Empty;
     if(fifo->head == fifo->size){
         fifo->head = 0;
@@ -89,15 +94,15 @@ void MyFIFODestroy(struct MyFIFO *fifo){
 
 void MyFIFOPrint(struct MyFIFO *fifo)
 {
-    if((fifo->cnt - fifo->head) < fifo->size){
-        printf("eNTROU AQUI");
+    if((fifo->cnt + fifo->head) <= fifo->size){
         for(int i = fifo->head; i < (fifo->head + fifo->cnt); i++){
             printf("%d ", fifo->data[i]);
         }
-    }else{
-        printf("eNTROU AQUI ASDASDASD");
+        printf("\n");
+    }else if(fifo->cnt + fifo->head > fifo->size){
+        
         int res = 0;
-        for(int i = fifo->head; i < fifo->size; i++){
+        for(int i = fifo->head; i < (fifo->head + fifo->cnt)-1; i++){
             printf("%d ", fifo->data[i]);
             res++;
         }
