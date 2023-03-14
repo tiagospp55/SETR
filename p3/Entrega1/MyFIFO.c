@@ -36,8 +36,8 @@ int MyFIFOInsert(struct MyFIFO *fifo,int value){
         printf("%d não foi inserido (tamanho máximo atingido)\n", value);
         return fifo_Full; 
     }
+    if(fifo->tail >= fifo->size) fifo->tail = 0;
     fifo->data[fifo->tail] = value;
-    if(fifo->tail == fifo->size) fifo->tail = 0;
     fifo->tail++;
     fifo->cnt++;
     printf("Inserir %d\n", value);
@@ -54,15 +54,18 @@ int MyFIFOInsert(struct MyFIFO *fifo,int value){
 */
 int MyFIFORemove(struct MyFIFO *fifo){
     printf("\nRemove %d", fifo->data[fifo->head]);
-    if(fifo->cnt == 0) return fifo_Empty;
-    if(fifo->head == fifo->size){
+    if(fifo->cnt == 0) {
+        printf("FIFO vazia\n");
+        return fifo_Empty;
+    }else if(fifo->head == fifo->size){
         fifo->head = 0;
+        fifo->cnt--;
     } 
     else{
         fifo->head++;
         fifo->cnt--;
     }
-    
+    printf("\n");
     return 0;
 
 }
@@ -101,7 +104,6 @@ int MyFIFOSize(struct MyFIFO *fifo){
 */
 
 void MyFIFODestroy(struct MyFIFO *fifo){
-    free(fifo->data);
     free(fifo);
 }
 
@@ -114,22 +116,32 @@ void MyFIFODestroy(struct MyFIFO *fifo){
 */
 void MyFIFOPrint(struct MyFIFO *fifo)
 {
-    if((fifo->cnt - fifo->head) < fifo->size){
-        printf("eNTROU AQUI");
-        for(int i = fifo->head; i < (fifo->head + fifo->cnt); i++){
+
+    if(fifo->cnt == 1){
+        printf("%d", fifo->data[fifo->head+1]);
+    }
+    else if(fifo->tail > fifo->head){
+        for(int i = fifo->head; i < fifo->tail; i++){
             printf("%d ", fifo->data[i]);
-        }
-    }else{
-        printf("eNTROU AQUI ASDASDASD");
-        int res = 0;
-        for(int i = fifo->head; i < fifo->size; i++){
-            printf("%d ", fifo->data[i]);
-            res++;
-        }
-        for(int i = 0; i <= (fifo->cnt - res); i++){ 
-            printf("%d ", fifo->data[i]);
+            printf(",");
+            
         }
     }
-
+    else if(fifo->head > fifo->tail){
+            for(int i = fifo->head; i < fifo->size; i++){
+                printf("%d ", fifo->data[i]);
+                printf(",");
+                }
+            for(int i = 0; i < fifo->tail; i++){
+                printf("%d ", fifo->data[i]);
+                printf(",");
+                
+            }
+    }
+    else{
+        printf("FIFO vazia");
+        
+    }
+    printf("\n");
 }
 

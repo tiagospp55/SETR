@@ -10,16 +10,16 @@
  * \brief Elements of FIFO
  * 
  * \var MyFIFO::data
- * \brief data of fifo
+ * \brief Pointer to the data in the fifo
  * 
  * \var MyFIFO::head
- * \brief head of fifo
+ * \brief Oldest element of fifo
  * 
  * \var MyFIFO::tail
- * \brief tail
+ * \brief newest element of fifo
  * 
  * \var MyFIFO::cnt
- * \brief elements of fifo
+ * \brief number of elements in the fifo
  * 
  *\var MyFIFO::size
  * \brief size of fifo 
