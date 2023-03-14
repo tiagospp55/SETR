@@ -1,14 +1,40 @@
 #include <stdio.h>
 #include <limits.h>
+
 #define fifo_Empty 1
 #define fifo_Full 2
 
+
+/**
+ * \struct MyFIFO
+ * \brief Elements of FIFO
+ * 
+ * \var MyFIFO::data
+ * \brief data of fifo
+ * 
+ * \var MyFIFO::head
+ * \brief head of fifo
+ * 
+ * \var MyFIFO::tail
+ * \brief tail
+ * 
+ * \var MyFIFO::cnt
+ * \brief elements of fifo
+ * 
+ *\var MyFIFO::size
+ * \brief size of fifo 
+ */
+ *  
+ * 
+ * 
+*/
 struct MyFIFO{
     int *data;
     int head;
     int tail;
     int cnt; 
     int size;
+    
 };
 
 
