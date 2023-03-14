@@ -104,7 +104,7 @@ int MyFIFOSize(struct MyFIFO *fifo){
 */
 
 void MyFIFODestroy(struct MyFIFO *fifo){
-    free(fifo);
+    free(&fifo);
 }
 
 
