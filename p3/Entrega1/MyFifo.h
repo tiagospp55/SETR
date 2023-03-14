@@ -24,10 +24,7 @@
  *\var MyFIFO::size
  * \brief size of fifo 
  */
- *  
- * 
- * 
-*/
+ 
 struct MyFIFO{
     int *data;
     int head;
