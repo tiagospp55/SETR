@@ -18,7 +18,7 @@ int main(void)
 	int res;
 	
 	printf("Command processor test app\n\r");
-	resetCmdString();
+	resetCmdString(); 
 	newCmdChar('#');  //Verificar se o primeiro caracter é #
 	newCmdChar('P');
 	newCmdChar('1');
@@ -28,19 +28,28 @@ int main(void)
 	newCmdChar('!');  //Verificar se o ultimo caracter é !
 	res=cmdProcessor(); //Verificar se o comando é válido
 	printf("cmdProcessor output to P 1 2 3: %d, Kp=%c,Ti=%c,Td=%c \n\r", res, Kp, Ti, Td);  //Imprimir o resultado do comando
+
 	
+
 	newCmdChar('#'); //Verificar se o primeiro caracter é #
 	newCmdChar('D'); 
 	newCmdChar('!'); //Verificar se o ultimo caracter é !
 	res=cmdProcessor(); //Verificar se o comando é válido
 	printf("cmdProcessor output to D (typo, should be S): % d\n\r", res);
 	
-	newCmdChar('+'); 
+	newCmdChar('+'); // Se não tiver o # não é detetado o S
 	newCmdChar('S');
 	newCmdChar('!');
 	res=cmdProcessor();
 	printf("cmdProcessor output to S with wrong SOF: % d\n\r", res);
+
+	resetCmdString();
+	newCmdChar('#'); // Detetado
+	newCmdChar('S');
+	newCmdChar('!');
+	cmdProcessor();
 	
+
 }
 
 

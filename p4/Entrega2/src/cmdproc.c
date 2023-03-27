@@ -22,8 +22,8 @@ char Kp, Ti, Td;
 int setpoint, output, error; 
 
 /* Internal variables */
-static char cmdString[MAX_CMDSTRING_SIZE];
-static unsigned char cmdStringLen = 0; 
+char cmdString[MAX_CMDSTRING_SIZE];
+unsigned char cmdStringLen = 0; 
 
 /* ************************************************************ */
 /* Processes the the chars received so far looking for commands */
@@ -40,7 +40,7 @@ int cmdProcessor(void)
 	
 	/* Detect empty cmd string */
 	if(cmdStringLen == 0)
-		return -1; 
+		return INVALID_STRING; 
 	
 	/* Find index of SOF */
 	for(i=0; i < cmdStringLen; i++) {
@@ -50,7 +50,7 @@ int cmdProcessor(void)
 	}
 	
 	/* If a SOF was found look for commands */
-	if(i < cmdStringLen) {
+	if(i < cmdStringLen ) {
 		if(cmdString[i+1] == 'P') { /* P command detected */
 			Kp = cmdString[i+2];
 			Ti = cmdString[i+3];
@@ -60,14 +60,13 @@ int cmdProcessor(void)
 		}
 		
 		if(cmdString[i+1] == 'S') { /* S command detected */
-			printf("Setpoint = %d, Output = %d, Error = %d", setpoint, output, error);
+			printf("Setpoint = %d, Output = %d, Error = %d \n", setpoint, output, error);
 			resetCmdString();
 			return 0;
 		}		
 	}
-	
 	/* cmd string not null and SOF not found */
-	return -4;
+	return INVALID_FORMAT;
 
 }
 
@@ -87,7 +86,7 @@ int newCmdChar(unsigned char newChar)
 	}
 	
 	/* If cmd string full return error */
-	return -1;
+	return INVALID_STRING;
 }
 
 /* ************************** */
