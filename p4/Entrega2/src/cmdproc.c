@@ -9,6 +9,15 @@
 /*        code instead of being (defined) text literals  */
 /* ***************************************************** */
 
+/**   \file cmdproc.c
+ *    \brief functions to create the PID controller
+ *
+ *    \author Vitor Silva,Tiago Pereira
+ *    \date 28 March 2023
+ *    \bug 
+ *    \version 1.0
+ */
+
 #include <stdio.h>
 
 #include "cmdproc.h"
@@ -22,7 +31,15 @@ char Kp, Ti, Td;
 int setpoint, output, error; 
 
 /* Internal variables */
+/**
+ *   \var cmdString 
+ *   \brief String to put chrs of the PID controller
+*/
 char cmdString[MAX_CMDSTRING_SIZE];
+/**
+ *   \var cmdStringLen
+ *   \brief Length of string
+ */
 unsigned char cmdStringLen = 0; 
 
 /* ************************************************************ */
@@ -34,6 +51,22 @@ unsigned char cmdStringLen = 0;
 /* 	-3: if a CS error is detected (command not executed)        */
 /* 	-4: if string format is wrong                               */
 /* ************************************************************ */
+
+/**
+ *
+ * \brief Processes the the chars received so far looking for commands
+ * 
+ * 
+ * \param[out]  return 0 if a valid command was found and executed 
+ * -
+ * -1: if empty string or incomplete command found 
+ * -
+ * -2: if an invalid command was found 
+ * - 
+ * -3: if a CS error is detected (command not executed) 
+ * -
+ * -4: if string format is wrong               
+*/
 int cmdProcessor(void)
 {
 	int i;
@@ -77,6 +110,15 @@ int cmdProcessor(void)
 /*  	 0: if success 		        */
 /* 		-1: if cmd string full 	    */
 /* ******************************** */
+/**
+ *
+ * \brief Adds a char to the cmd string
+ * 
+ * \param[in] void char to put in string
+ * \param[out]  return 0 if success
+ *  -
+ * -1 if cmd string full                 
+*/
 int newCmdChar(unsigned char newChar)
 {
 	/* If cmd string not full add char to it */
@@ -93,6 +135,12 @@ int newCmdChar(unsigned char newChar)
 /* ************************** */
 /* Resets the commanbd string */  
 /* ************************** */
+
+/**
+ *
+ * \brief Reset the command string
+ *                 
+*/
 void resetCmdString(void)
 {
 	cmdStringLen = 0;		

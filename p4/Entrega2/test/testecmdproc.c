@@ -1,18 +1,53 @@
+/**
+ * \mainpage
+ * \author Vitor Silva,Tiago Pereira
+ *    \date 28 March 2023
+ *    \bug 
+ *    \version 1.0
+ * 
+ * Test a C module that received , one character at a time ,comands via UART from a module that belongs to a close loop system with a PID controller 
+ * 
+*/
+
+
+/**   \file testecmdproc.c
+ *    \brief Unit test of the cmdproc functions
+ *
+ *    \author Vitor Silva,Tiago Pereira
+ *    \date 28 March 2023
+ *    \bug 
+ *    \version 1.0
+ */
 #include <unity.h>
 #include "cmdproc.h"
 
 extern char cmdString[MAX_CMDSTRING_SIZE];
 extern unsigned char cmdStringLen; 
 
+/**
+ *
+ * \brief variable initialization
+ *            
+*/
 void setUp(void)
 {
 	return;
 }
+/**
+ *
+ * \brief resource cleanup
+ *            
+*/
 void tearDown(void)
 {
 	return;
 }
 
+/**
+ *
+ * \brief Test function resetCmdString()
+ *            
+*/
 void test_resetCmd_String(void){
 	resetCmdString();
 	TEST_ASSERT_EQUAL_INT(INVALID_STRING, cmdProcessor());
@@ -20,6 +55,11 @@ void test_resetCmd_String(void){
 
 
 }
+/**
+ *
+ * \brief Test function newCmdChar()
+ *            
+*/
 void test_newCmdChar(void)
 {
 	/*Perguntar qual é a melhor forma de testar*/
@@ -42,6 +82,10 @@ void test_newCmdChar(void)
 	
 }
 
+/**
+ *
+ * \brief Test function cmdProcessor() if works correctly
+ */         
 void test_cmdProcessor_Correct(void)
 {
 	resetCmdString();
@@ -70,7 +114,10 @@ void test_cmdProcessor_Correct(void)
 	
 }
 
-
+/**
+ *
+ * \brief Test function cmdProcessor() if works incorrectly
+ */        
 void test_cmdProcessor_Fail(void){
 	/*Caso não funcional para instruções não existentes */
 	newCmdChar('#'); 

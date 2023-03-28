@@ -8,6 +8,15 @@
 /* Compile with: gcc cmdproc.c main.c -o main            */
 /*                                                       */
 /* ***************************************************** */
+
+/**   \file main.c
+ *    \brief Base code for Unit Testing
+ *
+ *    \author Vitor Silva,Tiago Pereira
+ *    \date 28 March 2023
+ *    \bug 
+ *    \version 1.0
+ */
 #include <stdio.h>
 #include "cmdproc.h"
 
