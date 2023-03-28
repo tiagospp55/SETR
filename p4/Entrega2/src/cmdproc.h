@@ -1,7 +1,7 @@
 #ifndef __CMD_PROC_H_
 #define __CMD_PROC_H_
 #define INVALID_STRING -1
-#define INVALID_COMAND -2
+#define INVALID_COMMAND -2
 #define CS_ERROR -3
 #define INVALID_FORMAT -4
 /* Some defines */

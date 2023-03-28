@@ -51,7 +51,7 @@ int cmdProcessor(void)
 	
 	/* If a SOF was found look for commands */
 	if(i < cmdStringLen ) {
-		if(cmdString[i+1] == 'P') { /* P command detected */
+		if(cmdString[i+1] == 'P' && cmdString[i+6] == '!') { /* P command detected */
 			Kp = cmdString[i+2];
 			Ti = cmdString[i+3];
 			Td = cmdString[i+4];
@@ -59,11 +59,12 @@ int cmdProcessor(void)
 			return 0;
 		}
 		
-		if(cmdString[i+1] == 'S') { /* S command detected */
+		if(cmdString[i+1] == 'S'  && cmdString[i+2] == '!') { /* S command detected */
 			printf("Setpoint = %d, Output = %d, Error = %d \n", setpoint, output, error);
 			resetCmdString();
 			return 0;
 		}		
+		return INVALID_COMMAND;
 	}
 	/* cmd string not null and SOF not found */
 	return INVALID_FORMAT;
