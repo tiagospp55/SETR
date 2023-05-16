@@ -17,7 +17,7 @@
 #define SLEEP_TIME_MS   1000 
 
 #define ERROR -1
-/* States */
+/* States and actions*/
 #define IDLE 0
 #define INSERTCOINS 1
 #define RETURNCOINS 2
@@ -100,7 +100,7 @@ int selectMovie(int movieIndex){
         return INSERTCOINS;
     }
     credit -= ticketPrice[movieIndex];
-	printk("Ticket for movie %c issued. Remaining credit %c\n",movies[movieIndex], credit);
+	printk("Ticket for movie %c issued. Remaining credit %d EUR\n",movies[movieIndex], credit);
 	printk("Please be the in the movie theater a little before %c%cH00\n",  session[2*movieIndex], session[2*movieIndex + 1]);
     return IDLE;
 }
@@ -136,13 +136,12 @@ void programLoop(int event, char ActualState){
 			state = ActualState;
 			break;
 		case INSERTCOINS:
-			insertCoin(event);
-			state = INSERTCOINS;
+			state = insertCoin(event);
 			break;
 		case SELECTMOVIE: 
-			selectMovie(event);
+			state = selectMovie(event);
 			break;
-			state = IDLE;
+			
 		default:
 			state = IDLE;
 	}
@@ -212,6 +211,7 @@ void main(void)
 		}
 	}
 
+	k_msleep(2*SLEEP_TIME_MS);
 	/* HW init done!*/
 	printk("All devices initialized sucesfully!\n\r");
 
@@ -239,8 +239,14 @@ void main(void)
 				state = BROWSE;
 				break;
 			case 2:
-				eventData = movieIndex;
-				state = SELECTMOVIE;
+				if(state == BROWSE){
+					eventData = movieIndex;
+					state = SELECTMOVIE;
+					break;
+				}else{
+					button = 0;
+					printk("Select you movie first, click on de up/down button");
+				}
 				break;
 			case 3:
 				eventData = -1;
@@ -268,8 +274,9 @@ void main(void)
 				break;
 			default: 
 				break;
-				
+			
 		}
+
 		// Just to guarantee that the button only changes one time the program
 		if(button != 0){
 			programLoop(eventData, state);
